@@ -52,20 +52,82 @@ nav .navigation .navbar li{
     border-bottom: 2px solid transparent;
     padding: 40px 0;
     border-bottom: 3px solid transparent;
+    cursor: pointer;
 }
 nav .navigation .navbar li:hover{
     color: var(--dark-grayish-blue);
     border-color: var(--orange);
 }
-nav .navigation .profile img{
+nav .navigation .profile{
+    position: relative;
+} 
+nav .navigation .profile li > img{
     width: 48px;
     height: 48px;
     border-radius: 50%;
     border: 2px solid transparent;
     transition: .3s;
+    cursor: pointer;
 }
-nav .navigation .profile img:hover{
+nav .navigation .profile li:hover img{
     border-color: var(--orange);
+}
+nav .navigation .profile .cart{
+    z-index: 5;
+    display: none;
+    border-radius: 6px;
+    position: absolute;
+    top: 60px;
+    right: -40px;
+    width: 340px;
+    background-color: var(--white);
+    box-shadow: 0 11px 30px -17px var(--black);
+}
+nav .navigation .profile li:hover > .cart{
+    display: block;
+}
+nav .navigation .profile .cart .title{
+    padding: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--grayish-blue);
+    color: var(--black);
+} 
+nav .navigation .profile .cart .content{
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+nav .navigation .profile .cart .content .info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+nav .navigation .profile .cart .content .info > img{
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+}
+nav .navigation .profile .cart .content .info .txt{
+    color: var(--grayish-blue);
+    text-align: left;
+    height: 100%;
+    line-height: 25px;
+}
+nav .navigation .profile .cart .content .info .txt p span{
+    font-weight: bold;
+    color: var(--black);
+}
+nav .navigation .profile .cart .content .checkBtn{
+    background-color: var(--orange);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+nav .navigation .profile .cart .content .checkBtn a{
+    color: var(--white);
+    font-weight: bold;
 }
 @media (max-width: 767px) {
     body{
@@ -119,8 +181,16 @@ nav .navigation .profile img:hover{
         border: none;
         color: var(--dark-grayish-blue);
     }
-    nav .navigation .profile img{
+    nav .navigation .profile {
+        position: inherit;
+    }
+    nav .navigation .profile li > img{
         width: 32px;
         height: 32px;
+    }
+    nav .navigation .profile .cart{
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
