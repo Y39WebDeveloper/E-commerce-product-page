@@ -69,7 +69,8 @@ nav .navigation .profile li > img{
     transition: .3s;
     cursor: pointer;
 }
-nav .navigation .profile li:hover img{
+nav .navigation .profile li:hover img,
+nav .navigation .profile li:has(.cart.active) img{
     border-color: var(--orange);
 }
 nav .navigation .profile .cart{
@@ -83,7 +84,7 @@ nav .navigation .profile .cart{
     background-color: var(--white);
     box-shadow: 0 11px 30px -17px var(--black);
 }
-nav .navigation .profile li:hover > .cart{
+nav .navigation .profile .cart.active{
     display: block;
 }
 nav .navigation .profile .cart .title{
@@ -96,6 +97,9 @@ nav .navigation .profile .cart .content{
     padding: 20px;
     text-align: center;
     width: 100%;
+}
+nav .navigation .profile .cart .content .emptyCart{
+    
 }
 nav .navigation .profile .cart .content .info{
     display: flex;

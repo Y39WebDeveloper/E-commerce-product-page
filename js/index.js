@@ -12,8 +12,17 @@ function showNavbar() {
         document.querySelector(".menu-icon img").src = "images/icon-menu.svg";
     }
 }
+function showCart(){
+    cart.classList.toggle("active");
+}
 function addContent(){
-    let a = document.querySelector(".cart .content");
+    let a = document.querySelector(".cart .content:has(.emptyCart)");
+
+    try {
+        a.remove();
+    } catch (error) {
+        
+    }
 
     let info = document.createElement("div");
     info.classList.add("info");
@@ -47,7 +56,18 @@ function addContent(){
 
     cart.appendChild(cartContent);
 
+    let b = document.querySelector(".cart .content:has(.info)");
+
     dlt.onclick = () => {
-        cart.removeChild(cartContent);
+        if(cart.children.length > 2){
+            cart.removeChild(cartContent);
+        }else{
+            cart.removeChild(cartContent);
+            cart.innerHTML += `<div class="content">
+              <div class="emptyCart">
+                Your cart is empty
+              </div>
+            </div>`;
+        }
     }
 }
