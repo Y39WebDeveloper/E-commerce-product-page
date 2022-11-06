@@ -2,6 +2,70 @@ let menuIcon = document.querySelector(".menu-icon");
 let navbar = document.querySelector(".navigation .navbar");
 let layer = document.querySelector(".layer");
 let cart = document.querySelector(".cart");
+let sliderImages = Array.from(document.querySelectorAll('.img-section .main-img img'));
+let imgBullets = Array.from(document.querySelectorAll(".img-section .img-bullets li"));
+let sliderImages2 = Array.from(document.querySelectorAll('#img-section2 .main-img img'));
+let imgBullets2 = Array.from(document.querySelectorAll("#img-section2 .img-bullets li"));
+let currentSlide = 1;
+let prev = document.getElementById("prev");
+let next = document.getElementById("next");
+let close = document.getElementById("close");
+
+prev.onclick = () => {
+    if (currentSlide == 1) {
+        return false;
+    } else{
+        currentSlide--;
+        theChecker();
+    }
+}
+next.onclick = () => {
+    if (currentSlide == 4) {
+        return false;
+    } else{
+        currentSlide++;
+        theChecker();
+    }
+}
+
+for(let i=0; i < imgBullets.length; i++){
+    imgBullets[i].onclick = function(){
+        currentSlide = parseInt(this.getAttribute("data-index"));
+        theChecker();
+    }
+}
+for(let i=0; i < imgBullets2.length; i++){
+    imgBullets2[i].onclick = function(){
+        currentSlide = parseInt(this.getAttribute("data-index"));
+        theChecker();
+    }
+}
+theChecker();
+
+function theChecker(){
+    removeAllActive();
+
+    sliderImages[currentSlide - 1].classList.add('active');
+    imgBullets[currentSlide - 1].classList.add('active');
+    sliderImages2[currentSlide - 1].classList.add('active');
+    imgBullets2[currentSlide - 1].classList.add('active');
+}
+
+function removeAllActive() {
+    sliderImages.forEach(function (img) {
+        img.classList.remove('active');
+    });
+    sliderImages2.forEach(function (img) {
+        img.classList.remove('active');
+    });
+
+    imgBullets.forEach(function (bullet) {
+        bullet.classList.remove('active');
+    });
+    imgBullets2.forEach(function (bullet) {
+        bullet.classList.remove('active');
+    });
+}
 
 function showNavbar() {
     navbar.classList.toggle("active");
@@ -11,6 +75,9 @@ function showNavbar() {
     }else{
         document.querySelector(".menu-icon img").src = "images/icon-menu.svg";
     }
+}
+function showSlider2(){
+    document.getElementById("img-section2").classList.toggle("active");
 }
 function showCart(){
     cart.classList.toggle("active");

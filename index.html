@@ -9,6 +9,23 @@
 </head>
 <body>
   <div class="layer" onclick="showNavbar()"></div>
+  <div id="img-section2">
+    <div class="main-img">
+      <img class="active" src="images/image-product-1.jpg" alt="">
+      <img src="images/image-product-2.jpg" alt="">
+      <img src="images/image-product-3.jpg" alt="">
+      <img src="images/image-product-4.jpg" alt="">
+    </div>
+    <span id="close" onclick="showSlider2()"><img src="images/icon-close.svg" alt=""></span>
+    <span id="prev"><img src="images/icon-previous.svg" alt=""></span>
+    <span id="next"><img src="images/icon-next.svg" alt=""></span>
+    <ul class="img-bullets">
+      <li data-index="1" class="active"><img src="images/image-product-1-thumbnail.jpg" alt=""></li>
+      <li data-index="2"><img src="images/image-product-2-thumbnail.jpg" alt=""></li>
+      <li data-index="3"><img src="images/image-product-3-thumbnail.jpg" alt=""></li>
+      <li data-index="4"><img src="images/image-product-4-thumbnail.jpg" alt=""></li>
+    </ul>
+  </div>
   <nav>
     <div class="menu-icon" onclick="showNavbar()">
       <img src="images/icon-menu.svg" alt="">
@@ -40,6 +57,23 @@
       </ul>
     </div>
   </nav>
+
+  <div class="body">
+    <div class="img-section">
+      <div class="main-img" onclick="showSlider2()">
+        <img class="active" src="images/image-product-1.jpg" alt="">
+        <img src="images/image-product-2.jpg" alt="">
+        <img src="images/image-product-3.jpg" alt="">
+        <img src="images/image-product-4.jpg" alt="">
+      </div>
+      <ul class="img-bullets">
+        <li data-index="1" class="active"><img src="images/image-product-1-thumbnail.jpg" alt=""></li>
+        <li data-index="2"><img src="images/image-product-2-thumbnail.jpg" alt=""></li>
+        <li data-index="3"><img src="images/image-product-3-thumbnail.jpg" alt=""></li>
+        <li data-index="4"><img src="images/image-product-4-thumbnail.jpg" alt=""></li>
+      </ul>
+    </div>
+  </div>
   <script src="js/index.js"></script>
 </body>
 </html>
