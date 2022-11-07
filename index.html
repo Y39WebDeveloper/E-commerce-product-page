@@ -9,23 +9,6 @@
 </head>
 <body>
   <div class="layer" onclick="showNavbar()"></div>
-  <div id="img-section2">
-    <div class="main-img">
-      <img class="active" src="images/image-product-1.jpg" alt="">
-      <img src="images/image-product-2.jpg" alt="">
-      <img src="images/image-product-3.jpg" alt="">
-      <img src="images/image-product-4.jpg" alt="">
-    </div>
-    <span id="close" onclick="showSlider2()"><img src="images/icon-close.svg" alt=""></span>
-    <span id="prev"><img src="images/icon-previous.svg" alt=""></span>
-    <span id="next"><img src="images/icon-next.svg" alt=""></span>
-    <ul class="img-bullets">
-      <li data-index="1" class="active"><img src="images/image-product-1-thumbnail.jpg" alt=""></li>
-      <li data-index="2"><img src="images/image-product-2-thumbnail.jpg" alt=""></li>
-      <li data-index="3"><img src="images/image-product-3-thumbnail.jpg" alt=""></li>
-      <li data-index="4"><img src="images/image-product-4-thumbnail.jpg" alt=""></li>
-    </ul>
-  </div>
   <nav>
     <div class="menu-icon" onclick="showNavbar()">
       <img src="images/icon-menu.svg" alt="">
@@ -57,7 +40,25 @@
       </ul>
     </div>
   </nav>
-
+  
+  <div id="img-section2">
+    <div class="main-img">
+      <img class="active" src="images/image-product-1.jpg" alt="">
+      <img src="images/image-product-2.jpg" alt="">
+      <img src="images/image-product-3.jpg" alt="">
+      <img src="images/image-product-4.jpg" alt="">
+    </div>
+    <span id="close" onclick="showSlider2()"><img src="images/icon-close.svg" alt=""></span>
+    <span id="prev"><img src="images/icon-previous.svg" alt=""></span>
+    <span id="next"><img src="images/icon-next.svg" alt=""></span>
+    <ul class="img-bullets">
+      <li data-index="1" class="active"><img src="images/image-product-1-thumbnail.jpg" alt=""></li>
+      <li data-index="2"><img src="images/image-product-2-thumbnail.jpg" alt=""></li>
+      <li data-index="3"><img src="images/image-product-3-thumbnail.jpg" alt=""></li>
+      <li data-index="4"><img src="images/image-product-4-thumbnail.jpg" alt=""></li>
+    </ul>
+  </div>
+  
   <div class="body">
     <div class="img-section">
       <div class="main-img" onclick="showSlider2()">
@@ -72,6 +73,27 @@
         <li data-index="3"><img src="images/image-product-3-thumbnail.jpg" alt=""></li>
         <li data-index="4"><img src="images/image-product-4-thumbnail.jpg" alt=""></li>
       </ul>
+    </div>
+
+    <div class="description-section">
+      <p class="company">Sneaker company</p>
+      <h1 class="title">Fall limited edition Sneaker</h1>
+      <p class="description">
+        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll
+        withstand everything the weather can offer.
+      </p>
+      <div class="price">
+        <div>$125.00 <span>50%</span></div>
+        <div class="discount">$250.00</div>
+      </div>
+      <div class="buy">
+        <div class="count">
+          <span id="minus"><img src="images/icon-minus.svg" alt=""></span>0<span id="plus"><img src="images/icon-plus.svg" alt=""></span>
+        </div>
+        <div class="add-cart">
+          Add to cart
+        </div>
+      </div>
     </div>
   </div>
   <script src="js/index.js"></script>
