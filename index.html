@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
+
 <body>
   <div class="layer" onclick="showNavbar()"></div>
   <nav>
@@ -29,7 +31,7 @@
             </div>
           </div>
         </li>
-        
+
       </ul>
       <ul class="navbar">
         <li>Collections</li>
@@ -40,7 +42,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <div id="img-section2">
     <div class="main-img">
       <img class="active" src="images/image-product-1.jpg" alt="">
@@ -58,7 +60,7 @@
       <li data-index="4"><img src="images/image-product-4-thumbnail.jpg" alt=""></li>
     </ul>
   </div>
-  
+
   <div class="body">
     <div class="img-section">
       <div class="main-img" onclick="showSlider2()">
@@ -79,7 +81,8 @@
       <p class="company">Sneaker company</p>
       <h1 class="title">Fall limited edition Sneaker</h1>
       <p class="description">
-        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll
+        These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
+        they'll
         withstand everything the weather can offer.
       </p>
       <div class="price">
@@ -88,9 +91,10 @@
       </div>
       <div class="buy">
         <div class="count">
-          <span id="minus"><img src="images/icon-minus.svg" alt=""></span>0<span id="plus"><img src="images/icon-plus.svg" alt=""></span>
+          <span id="minus"><img src="images/icon-minus.svg" alt=""></span><span id="number">0</span><span id="plus"><img
+              src="images/icon-plus.svg" alt=""></span>
         </div>
-        <div class="add-cart">
+        <div class="add-cart", onclick="addContent()">
           Add to cart
         </div>
       </div>
@@ -98,4 +102,5 @@
   </div>
   <script src="js/index.js"></script>
 </body>
+
 </html>

@@ -11,10 +11,15 @@ let prev = document.getElementById("prev");
 let next = document.getElementById("next");
 let close = document.getElementById("close");
 
+let count = document.getElementById("number");
+let plus = document.getElementById("plus");
+let minus = document.getElementById("minus");
+let price = 125.00;
+
 prev.onclick = () => {
     if (currentSlide == 1) {
         return false;
-    } else{
+    } else {
         currentSlide--;
         theChecker();
     }
@@ -22,27 +27,30 @@ prev.onclick = () => {
 next.onclick = () => {
     if (currentSlide == 4) {
         return false;
-    } else{
+    } else {
         currentSlide++;
         theChecker();
     }
 }
 
-for(let i=0; i < imgBullets.length; i++){
-    imgBullets[i].onclick = function(){
+for (let i = 0; i < imgBullets.length; i++) {
+    imgBullets[i].onclick = function () {
         currentSlide = parseInt(this.getAttribute("data-index"));
         theChecker();
     }
 }
-for(let i=0; i < imgBullets2.length; i++){
-    imgBullets2[i].onclick = function(){
+for (let i = 0; i < imgBullets2.length; i++) {
+    imgBullets2[i].onclick = function () {
         currentSlide = parseInt(this.getAttribute("data-index"));
         theChecker();
     }
 }
 theChecker();
 
-function theChecker(){
+plus.onclick = () => count.innerHTML == 10 ? false : count.innerHTML++;
+minus.onclick = () => count.innerHTML == 0 ? false : count.innerHTML--;
+
+function theChecker() {
     removeAllActive();
 
     sliderImages[currentSlide - 1].classList.add('active');
@@ -70,38 +78,38 @@ function removeAllActive() {
 function showNavbar() {
     navbar.classList.toggle("active");
     layer.classList.toggle("active");
-    if (navbar.classList.contains("active")){
+    if (navbar.classList.contains("active")) {
         document.querySelector(".menu-icon img").src = "images/icon-close.svg";
-    }else{
+    } else {
         document.querySelector(".menu-icon img").src = "images/icon-menu.svg";
     }
 }
-function showSlider2(){
+function showSlider2() {
     document.getElementById("img-section2").classList.toggle("active");
 }
-function showCart(){
+function showCart() {
     cart.classList.toggle("active");
 }
-function addContent(){
+function addContent() {
     let a = document.querySelector(".cart .content:has(.emptyCart)");
 
     try {
         a.remove();
     } catch (error) {
-        
+
     }
 
     let info = document.createElement("div");
     info.classList.add("info");
-    
+
     let img = document.createElement("img");
     img.src = "images/image-product-1-thumbnail.jpg";
-    
+
     let txt = document.createElement("div");
     txt.classList.add("txt");
-    
+
     let par = document.createElement("p");
-    par.innerHTML = `Fall Limited Edition Sneakers<br>$125.00 x 3 <span>$375.00</span>`;
+    par.innerHTML = `Fall Limited Edition Sneakers<br>$${price} x ${count.innerHTML} <span>$${count.innerHTML * price}</span>`;
 
     let dlt = document.createElement("div");
     dlt.classList.add("delete");
@@ -126,9 +134,9 @@ function addContent(){
     let b = document.querySelector(".cart .content:has(.info)");
 
     dlt.onclick = () => {
-        if(cart.children.length > 2){
+        if (cart.children.length > 2) {
             cart.removeChild(cartContent);
-        }else{
+        } else {
             cart.removeChild(cartContent);
             cart.innerHTML += `<div class="content">
               <div class="emptyCart">

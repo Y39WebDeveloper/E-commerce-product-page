@@ -127,6 +127,7 @@ nav .navigation .profile li > img{
 nav .navigation .profile li:hover img,
 nav .navigation .profile li:has(.cart.active) img{
     border-color: var(--orange);
+    cursor: pointer;
 }
 nav .navigation .profile .cart{
     z-index: 5;
@@ -326,6 +327,7 @@ nav .navigation .profile .cart .content .checkBtn a{
     font-weight: bold;
     border-radius: 8px;
 }
+#minus,#plus{cursor: pointer;}
 @media (max-width: 767px) {
     body{
         width: 100%;
@@ -452,13 +454,6 @@ nav .navigation .profile .cart .content .checkBtn a{
     align-items: center;
     justify-content: space-between;
     }
-
-    .description-section .price div {
-    }
-
-    .description-section .price div span {
-    }
-
     .description-section .price .discount {
     margin-top: 0;
     }
