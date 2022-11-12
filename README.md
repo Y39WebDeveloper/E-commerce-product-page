@@ -1,4 +1,4 @@
-# Frontend Mentor - E-commerce product page
+# Frontend Mentor - E-commerce product page  https://y39webdeveloper.github.io/E-commerce-product-page/
 
 ![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
 
